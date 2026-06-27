@@ -81,5 +81,5 @@ dotnet test
 - .NET 10 / ASP.NET Core
 - Typed `HttpClient`s with interfaces (`IGeocodingClient`, `IWeatherClient`)
 - [Scalar](https://github.com/ScalarHQ/scalar) for API docs
-- XUnit + Wiremock + Shouldly for integartion tests
+- xUnit v3 + WireMock.Net + Shouldly for integration tests
 - Docker Compose + Express mock for service virtualization
