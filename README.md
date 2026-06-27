@@ -45,7 +45,7 @@ When running locally, the API calls the real services:
 dotnet run --project src/Tempo.Api
 ```
 
-- API: http://localhost:5297/weather/v1/London
+- API: http://localhost:5297/weather/v1/Auckland
 - Docs: http://localhost:5297/scalar/v1
 
 ## Running with Docker (service mocking/virtualisation)
@@ -56,7 +56,7 @@ A Node.js mock replaces both external APIs, so the entire system runs without in
 docker compose up --build
 ```
 
-- API: http://localhost:8080/weather/v1/London
+- API: http://localhost:8080/weather/v1/Auckland
 - Docs: http://localhost:8080/scalar/v1
 - Mock: http://localhost:3000
 
