@@ -60,7 +60,7 @@ docker compose up --build
 - Docs: http://localhost:8080/scalar/v1
 - Mock: http://localhost:3000
 
-### Simulating failures
+### Test scenarios
 
 | City           | Behaviour                                  |
 |----------------|--------------------------------------------|
