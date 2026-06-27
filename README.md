@@ -8,7 +8,7 @@ When you build services that depend on other services, you need those dependenci
 
 With Docker Compose this is pretty straightforward. You run containers for things like SQL Server, Cosmos DB, or Service Bus, and for internal services each team can provide a small Docker image that behaves like their API. If no image exists, you mock it yourself.
 
-For cloud services, tools like [Floci](https://floci.io/) (AWS, Azure, GCP) and [LocalStack](https://localstack.cloud/) (AWS) do the same thing — they emulate cloud APIs on your machine so you can work with S3, DynamoDB, or Service Bus without a cloud account. Same idea: replace what you don't control with something you do.
+It's also very popular now to emulate cloud services locally. Tools like [Floci](https://floci.io/) (AWS, Azure, GCP) and [LocalStack](https://localstack.cloud/) (AWS) replicate cloud APIs on your machine so you can work with S3, DynamoDB, or Service Bus without a cloud account. Same idea: replace what you don't control with something you do. In our case, a set of containers with Docker Compose should be more than enough.
 
 If you don't mock your dependencies, you're tying yourself to the hope that every other system is up and healthy. When something goes down — and it will — your service breaks too, even though your code is fine. That's not a testing problem, it's a design problem.
 
