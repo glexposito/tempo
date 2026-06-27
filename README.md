@@ -34,7 +34,7 @@ GET /weather/v1/{city}
    3. Return { city, temperatureC }
 ```
 
-## Running locally
+## Running locally (real services)
 
 When running locally, the API calls the real services:
 
@@ -64,7 +64,7 @@ docker compose up --build
 
 | City           | Behaviour                                  |
 |----------------|--------------------------------------------|
-| `London`       | Happy path — random coordinates and temp   |
+| Any string     | Happy path — random coordinates and temp   |
 | `nocity`       | Geocoding returns no results → 404         |
 | `noforecast`   | Geocoding succeeds, forecast fails → 404   |
 
