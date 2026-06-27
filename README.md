@@ -12,15 +12,16 @@ For cloud services, tools like [Floci](https://floci.io/) (AWS, Azure, GCP) and 
 
 If you don't mock your dependencies, you're tying yourself to the hope that every other system is up and healthy. When something goes down — and it will — your service breaks too, even though your code is fine. That's not a testing problem, it's a design problem.
 
+With mocked dependencies, your system is still fully testable end to end. You can explore, test edge cases, and keep developing without worrying about what's up or down.
+
 Real end-to-end testing against real services belongs in staging and production. Depending on how complex the system is, full end-to-end might only be realistic in production itself.
 
 ## What is this?
 
 A single endpoint — `GET /weather/v1/{city}` — that returns the current temperature for a city. Internally it chains two external API calls (geocoding → forecast), which makes it a good teaching example for:
 
-- **Why** to mock — the external APIs return non-deterministic data
-- **Where** the seam is — your code depends on `IGeocodingClient` and `IWeatherClient`, not on `HttpClient`
-- **How** to mock multiple collaborators — the handler depends on two services, and the second call uses the output of the first
+- **Why** mock — the external APIs may not be available and are expensive to spin up and maintain
+- **How** to mock — the handler depends on two services through interfaces, so you mock the contracts and focus on testing inputs and outputs
 
 ## Architecture
 
@@ -50,7 +51,7 @@ dotnet run --project src/Tempo.Api
 
 ## Running with Docker (service mocking/virtualisation)
 
-A Node.js mock replaces both external APIs, so the entire system runs without internet access.
+A Node.js mock replaces both external APIs, so the entire system runs without internet access. The API is still fully testable end to end — you can explore it, test edge cases, and develop new features without worrying about external services being available or breaking.
 
 ```bash
 docker compose up --build
