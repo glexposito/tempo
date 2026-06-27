@@ -1,6 +1,6 @@
 # Tempo
 
-A proof-of-concept weather API built to demonstrate **service mocking** (also known as service virtualization) in .NET.
+A proof-of-concept weather API built to demonstrate **service mocking** (also known as service virtualisation) in .NET.
 
 ## Why mock services?
 
@@ -48,7 +48,7 @@ dotnet run --project src/Tempo.Api
 - API: http://localhost:5297/weather/v1/London
 - Docs: http://localhost:5297/scalar/v1
 
-## Running with Docker (service mocking/virtualization)
+## Running with Docker (service mocking/virtualisation)
 
 A Node.js mock replaces both external APIs, so the entire system runs without internet access.
 
@@ -82,4 +82,4 @@ dotnet test
 - Typed `HttpClient`s with interfaces (`IGeocodingClient`, `IWeatherClient`)
 - [Scalar](https://github.com/ScalarHQ/scalar) for API docs
 - xUnit v3 + WireMock.Net + Shouldly for integration tests
-- Docker Compose + Express mock for service virtualization
+- Docker Compose + Express mock for service virtualisation
