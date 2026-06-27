@@ -48,7 +48,7 @@ dotnet run --project src/Tempo.Api
 - API: http://localhost:5297/weather/v1/London
 - Docs: http://localhost:5297/scalar/v1
 
-## Running with Docker (service virtualization)
+## Running with Docker (service mocking/virtualization)
 
 A Node.js mock replaces both external APIs, so the entire system runs without internet access.
 
